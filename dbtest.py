@@ -3,6 +3,8 @@ from google.oauth2 import service_account
 from google.cloud.sql.connector import Connector, IPTypes
 import sqlalchemy
 import json
+import time
+
 
 project_id = "rahul-research-test"
 region = "asia-south1"
@@ -14,7 +16,7 @@ DB_PASS = "rahulraj31" #"food"
 DB_NAME = "curefit_test_db" #"sandwiches"
 
 def main():
-    with open('rahul-research-test-b312be95cbac.json') as source:
+    with open('rahul-research-test-6dd22e92abfd.json') as source:
         info = json.load(source)
 
     cred = service_account.Credentials.from_service_account_info(info)
@@ -49,4 +51,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    iter=1
+    while True:
+        print(f"Starting new Iteration No. {iter}")
+        main()
+        iter+=1
+        time.sleep(5)
+
