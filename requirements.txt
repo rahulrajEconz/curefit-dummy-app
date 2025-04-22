@@ -1,0 +1,4 @@
+google-auth
+cloud-sql-python-connector["pymysql"] SQLAlchemy==2.0.7
+sqlalchemy
+json
